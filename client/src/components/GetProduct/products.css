@@ -1,0 +1,31 @@
+.product-list{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.product-list ul li{
+    display: inline-block;
+    border: 1px solid skyblue;
+    padding: 5px;
+    width: 240px;
+    margin: 1px;
+    height: 40px;
+}
+
+.product-list ul{
+    margin: 0px;
+}
+
+.delete-btn{
+    margin: 0;
+}
+
+.search{
+    width: 350px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    height: 40px;
+    padding: 15px;
+    border-radius: 10px;
+}

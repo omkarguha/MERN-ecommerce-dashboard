@@ -1,0 +1,31 @@
+.nav-ul li{
+    display: inline-block;
+    padding: 10px;
+}
+
+.nav-ul li a{
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.nav-ul{
+    padding: 5px;
+    margin: 0;
+    background-color: skyblue;
+}
+
+img{
+    width: 60px;
+    float: left;
+    border-radius: 30%;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.nav-bar{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
