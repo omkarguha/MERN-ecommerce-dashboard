@@ -1,0 +1,17 @@
+.profile{
+    margin-left: 30%;
+}
+
+td{
+    /* border: 1px solid black; */
+    /* text-align: center; */
+}
+.first{
+    float: right;
+    padding: 8px;
+}
+
+.second{
+    /* text-align: center; */
+    padding-bottom: 5px;
+}

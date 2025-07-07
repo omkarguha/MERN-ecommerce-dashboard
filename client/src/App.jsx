@@ -8,6 +8,7 @@ import Login from './components/Login/Login';
 import AddProduct from './components/AddProduct/AddProduct';
 import GetProduct from './components/GetProduct/GetProduct';
 import UpdateProduct from './components/UpdateProduct/UpdateProduct';
+import Profile from './components/Profile/Profile'
 
 import './App.css';
 
@@ -23,7 +24,7 @@ function App() {
             <Route path='/' element={<GetProduct/>}/>
             <Route path='/add' element={<AddProduct/>}/>
             <Route path='/update/:id' element={<UpdateProduct/>}/>
-            <Route path='/profile' element={<h1>YOU</h1>}/>
+            <Route path='/profile' element={<Profile/>}/>
             <Route path='/logout' element={<h1>Logging Out</h1>}/>
           </Route>
           <Route path='/signup' element={<Signup/>}/>
