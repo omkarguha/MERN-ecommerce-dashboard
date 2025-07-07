@@ -26,7 +26,8 @@ function AddProduct() {
         method: 'post',
         body:JSON.stringify({name, price, category, company, userId}),
         headers:{
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('auth')}` 
         }
       })
       result= await result.json();

@@ -14,14 +14,22 @@ function GetProduct() {
     }, [])
 
     const getAllProducts= async()=>{
-        let result= await fetch('http://localhost:5000/product');
+        let result= await fetch('http://localhost:5000/product',{
+            headers:{
+                Authorization: `Bearer ${localStorage.getItem('auth')}`
+            }
+        });
         result= await result.json();
+        // console.log(localStorage.getItem('auth'));
         setProducts(result);
     }
 
     const handleDelete= async(id)=>{
         let result= await fetch(`http://localhost:5000/product/id/${id}`, {
-            method: 'DELETE'
+            method: 'DELETE',
+            headers:{
+                Authorization: `Bearer ${localStorage.getItem('auth')}`
+            }
         });
         // result= await result.json();
         // console.log(result);
@@ -35,7 +43,11 @@ function GetProduct() {
     const handleSearch= async(e)=>{
         let key= e.target.value;
         if(key){
-            let result= await fetch(`http://localhost:5000/product/search/${key}`);
+            let result= await fetch(`http://localhost:5000/product/search/${key}`,{
+                headers:{
+                    Authorization: `Bearer ${localStorage.getItem('auth')}`
+                }
+            });
             result= await result.json();
             if(result){
                 setProducts(result);

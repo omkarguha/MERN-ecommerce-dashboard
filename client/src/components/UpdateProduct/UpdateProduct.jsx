@@ -16,7 +16,11 @@ function UpdateProduct() {
 
     const getDataToInput = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/product/id/${productId}`);
+        const response = await fetch(`http://localhost:5000/product/id/${productId}`,{
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem('auth')}` // Ensure you have the token in localStorage
+          }
+        });
         const result = await response.json();
         setName(result.name);
         setPrice(result.price);
@@ -46,6 +50,7 @@ function UpdateProduct() {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${localStorage.getItem('auth')}`, // Ensure you have the token in localStorage
         },
         body: JSON.stringify(product),
       });
@@ -70,7 +75,7 @@ function UpdateProduct() {
       <input onChange={(e) => setPrice(e.target.value)} value={price} type="text" name="" id="" placeholder='product price' className='signup-input' />
       <input onChange={(e) => setCategory(e.target.value)} value={category} type="text" name="" id="" placeholder='product category' className='signup-input' />
       <input onChange={(e) => setCompany(e.target.value)} value={company} type="text" name="" id="" placeholder='product company' className='signup-input' />
-      <button className='signup-btn' onClick={handleUpdate}>Add Product</button>
+      <button className='signup-btn' onClick={handleUpdate}>Update</button>
       <p className='text-danger'>{error}</p>
     </div>
   )
